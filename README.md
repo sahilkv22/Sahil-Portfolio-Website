@@ -12,16 +12,26 @@ A lightweight personal portfolio website showcasing:
 ## Architecture
 
 ```text
+
 sahil-investment-portfolio/
+│
 ├── index.html
+├── model-portfolio.html
+├── research.html
+├── about.html
 ├── README.md
+│
 ├── assets/
 │   └── css/
 │       └── style.css
+|
+├── js/
+│   └── style.css
+|
 └── projects/
-    ├── portfolio.html
     ├── bajaj-finance.html
     └── asian-paints.html
+
 ```
 
 ## Run locally
@@ -37,21 +47,6 @@ Open `index.html` directly in a browser, or use VS Code Live Server.
 3. Select **Deploy from branch**.
 4. Choose `main` and `/ (root)`.
 5. Save.
-
-## Next upgrades
-
-The architecture intentionally starts simple. Future additions can include:
-
-- Interactive ₹10L portfolio dashboard
-- Stock research pages
-- Embedded Excel/PDF models
-- Python-generated charts
-- Portfolio risk analytics
-- AI annual-report analyser
-- GitHub project links
-- Resume download
-- Substack / LinkedIn feed
-- Dark/light mode
 
 ## Important
 

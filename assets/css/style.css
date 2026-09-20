@@ -1,0 +1,854 @@
+/* =========================================================
+   01 — DESIGN TOKENS
+   Change the visual identity of the entire site here.
+   ========================================================= */
+
+:root {
+  --bg: #ffffff;
+  --surface: #f6f6f3;
+  --surface-dark: #151515;
+
+  --text: #171717;
+  --muted: #6d6d6d;
+  --border: #ddddda;
+
+  --accent: #1f4d3a;
+
+  --max-width: 1500px;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+  --space-6: 72px;
+
+  --radius: 4px;
+}
+
+/* =========================================================
+   02 — RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   03 — TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  font-size: clamp(42px, 6vw, 72px);
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 48px);
+}
+
+h3 {
+  font-size: 21px;
+}
+
+p {
+  color: var(--muted);
+  max-width: 680px;
+}
+
+.eyebrow {
+  margin-bottom: var(--space-2);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.card-label {
+  margin-bottom: var(--space-2);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   04 — LAYOUT
+   ========================================================= */
+
+.container {
+  width: min(calc(100% - 80px), var(--max-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding: var(--space-6) 0;
+}
+
+.section-muted {
+  background: var(--surface);
+}
+
+.section-dark {
+  background: var(--surface-dark);
+  color: white;
+}
+
+.section-dark p {
+  color: #bdbdbd;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.section-heading {
+  margin-bottom: var(--space-5);
+}
+
+.section-heading h2 {
+  margin-bottom: var(--space-2);
+}
+
+/* =========================================================
+   05 — HEADER & NAVIGATION
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-menu {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.nav-menu a {
+  padding: 8px 0;
+
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--text);
+}
+
+.nav-toggle {
+  display: none;
+
+  border: 0;
+  background: none;
+
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px 0;
+
+  background: var(--text);
+}
+
+/* =========================================================
+   06 — HERO
+   ========================================================= */
+
+.hero {
+  padding: 50px 0 30px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin-bottom: var(--space-3);
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-text {
+  font-size: 18px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.hero-meta {
+  display: grid;
+  gap: var(--space-3);
+  padding-top: 100px;
+}
+
+.stat {
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border);
+}
+
+.stat strong,
+.stat span {
+  display: block;
+}
+
+.stat strong {
+  font-size: 22px;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================================================
+   07 — PAGE INTRO
+   ========================================================= */
+
+.page-intro {
+  padding: 45px 0 50px;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-intro h1 {
+  max-width: 850px;
+  margin-bottom: var(--space-3);
+}
+
+.page-intro p {
+  font-size: 18px;
+}
+
+/* =========================================================
+   08 — BUTTONS
+   ========================================================= */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+  padding: 0 20px;
+
+  border: 1px solid var(--text);
+  border-radius: var(--radius);
+
+  font-size: 14px;
+}
+
+.button-primary {
+  background: var(--text);
+  color: white;
+}
+
+.button-secondary {
+  background: white;
+}
+
+.button-light {
+  background: white;
+  color: var(--text);
+  border-color: white;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+/* =========================================================
+   09 — CARDS
+   ========================================================= */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+.card {
+  min-height: 240px;
+  padding: var(--space-4);
+
+  background: var(--bg);
+
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-muted .card {
+  background: white;
+}
+
+.card-number {
+  display: block;
+  margin-bottom: var(--space-4);
+
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card h3 {
+  margin-bottom: var(--space-2);
+}
+
+.card p {
+  margin-bottom: var(--space-3);
+}
+
+.card strong {
+  font-size: 18px;
+}
+
+/* =========================================================
+   10A — THREE COLUMN CARD GRID
+   Used for selected work and portfolio frameworks.
+   ========================================================= */
+
+.card-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* =========================================================
+   10 — PROCESS CARDS
+   ========================================================= */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.process-card {
+  padding: var(--space-3);
+  background: var(--bg);
+}
+
+.process-card > span {
+  display: block;
+  margin-bottom: var(--space-4);
+
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.process-card h3 {
+  margin-bottom: var(--space-2);
+}
+
+/* =========================================================
+   11 — TAGS
+   ========================================================= */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: var(--space-0);
+}
+
+.tags span {
+  padding: 6px 10px;
+
+  border: 1px solid var(--border);
+  border-radius: 120px;
+
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* =========================================================
+   12 — LINKS
+   ========================================================= */
+
+.text-link {
+  display: inline-block;
+
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+
+  border-bottom: 1px solid var(--text);
+}
+
+.text-link:hover {
+  color: var(--accent);
+}
+
+/* =========================================================
+   13 — METRICS
+   ========================================================= */
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+
+  border: 1px solid var(--border);
+  background: var(--border);
+}
+
+.metric {
+  padding: var(--space-4);
+  background: white;
+}
+
+.metric strong,
+.metric span {
+  display: block;
+}
+
+.metric strong {
+  font-size: 32px;
+}
+
+.metric span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================================================
+   14 — ALLOCATION
+   ========================================================= */
+
+.allocation-list {
+  border-top: 1px solid var(--border);
+}
+
+.allocation-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+
+  padding: var(--space-3) 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.allocation-row div {
+  display: flex;
+  flex-direction: column;
+}
+
+.allocation-row span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================================================
+   15 — PRINCIPLES
+   ========================================================= */
+
+.principle-list {
+  display: grid;
+  gap: 0;
+
+  border-top: 1px solid var(--border);
+}
+
+.principle-list > div {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-3);
+
+  padding: var(--space-3) 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.principle-list > div > span {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* =========================================================
+   16 — TABLE
+   ========================================================= */
+
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+  background: white;
+}
+
+th,
+td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+th {
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+/* =========================================================
+   17 — TIMELINE
+   ========================================================= */
+
+.timeline {
+  border-top: 1px solid var(--border);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-3);
+
+  padding: var(--space-4) 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline-number {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.timeline-item h3 {
+  margin-bottom: var(--space-2);
+}
+
+/* =========================================================
+   18 — SIMPLE LIST
+   ========================================================= */
+
+.simple-list {
+  border-top: 1px solid var(--border);
+}
+
+.simple-list > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  padding: var(--space-3) 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.simple-list span {
+  color: var(--muted);
+}
+
+/* =========================================================
+   19 — CONTACT
+   ========================================================= */
+
+.contact-box {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  gap: var(--space-6);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.contact-links a {
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+
+/* =========================================================
+   20 — NUMBER LIST
+   ========================================================= */
+
+.number-list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.number-list p {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--space-2);
+}
+
+.number-list span {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* =========================================================
+   21 — MINI BLOCKS
+   ========================================================= */
+
+.mini-block {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.mini-block strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* =========================================================
+   22 — AI PROCESS LINE
+   ========================================================= */
+
+.process-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: var(--space-4);
+
+  color: white;
+  font-size: 13px;
+}
+
+/* =========================================================
+   23 — NOTE / CALLOUT
+   ========================================================= */
+
+.note {
+  max-width: 850px;
+}
+
+.note h2 {
+  margin-bottom: var(--space-3);
+}
+
+.disclaimer {
+  max-width: 800px;
+}
+
+/* =========================================================
+   24 — CTA
+   ========================================================= */
+
+.cta {
+  max-width: 800px;
+}
+
+.cta h2 {
+  margin-bottom: var(--space-3);
+}
+
+.cta p {
+  margin-bottom: var(--space-3);
+}
+
+/* =========================================================
+   25 — FOOTER
+   ========================================================= */
+
+.site-footer {
+  padding: var(--space-3) 0;
+
+  border-top: 1px solid var(--border);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.footer-content p {
+  font-size: 12px;
+}
+
+.footer-content div {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.footer-content a {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* =========================================================
+   26 — RESPONSIVE
+   One responsive layer keeps the whole system predictable.
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .section {
+    padding: var(--space-4) 0;
+  }
+
+  .hero {
+    padding: 30px 0;
+  }
+
+  .hero-grid,
+  .split,
+  .contact-box {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .card-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-meta {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+
+    display: none;
+    flex-direction: column;
+    gap: 0;
+
+    padding: 8px 15px;
+
+    background: white;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu a {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-menu a:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    width: min(calc(100% - 28px), var(--max-width));
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .hero-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-content div {
+    flex-wrap: wrap;
+  }
+}
